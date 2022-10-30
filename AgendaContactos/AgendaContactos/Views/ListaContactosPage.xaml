@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgendaContactos.Views.ListaContactosPage">
+    <StackLayout>
+        
+        <Button Text="Nuevo Contacto" Clicked="NuevoContactoAction"
+                BackgroundColor="Green" 
+                Margin="10" />
+    
+        <CollectionView x:Name="collectionView" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0"
+                                     WidthRequest="300"
+                                     HeightRequest="300">
+                            <Label Text="{Binding Apellido}" FontAttributes="Bold" FontSize="20" />
+                        </StackLayout>
+                        <StackLayout Grid.Column="0"
+                                     Grid.Row="1"
+                                     WidthRequest="100"
+                                     HeightRequest="100">
+                            <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="18" />
+                        </StackLayout>
+
+                        <Image Grid.Column="3"
+                            Source="/Resources/drawable/info"
+                            Aspect="AspectFit"
+                            HeightRequest="30"
+                            WidthRequest="30"
+                            VerticalOptions="End">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="VerContactoAction"
+                                    CommandParameter="{Binding .}" />
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Image Grid.Column="4"
+                           Source="/Resources/drawable/edit"
+                           Aspect="AspectFit"
+                           HeightRequest="30"
+                           WidthRequest="30">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="EditarContactoAction"
+                                    CommandParameter="{Binding .}" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    
+                        <Image Grid.Column="5"
+                           Source="/Resources/drawable/delete"
+                           Aspect="AspectFit"
+                           HeightRequest="30"
+                           WidthRequest="30"
+                           VerticalOptions="End">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="EliminarContactoAction"
+                                    CommandParameter="{Binding .}" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                    <!--
+                    <StackLayout VerticalOptions="Start" HorizontalOptions="Fill" Padding="30,40,30,0">
+                        <Label Text="{Binding Apellido}"
+                                   FontSize="Medium" />
+                        <Label Text="{Binding Nombre}"
+                                   FontSize="Medium" />
+                        <Label Text="{Binding Numero}"
+                                   TextColor="Silver"
+                                   FontSize="Small" />
+                        <Label Text="Editar">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="EditarAction"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Label Text="ImageButton"
+                           FontSize="50"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center" />
+
+                        <ImageButton Source="XamarinLogo.png"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand" />
+
+                    </StackLayout>
+                    -->
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>

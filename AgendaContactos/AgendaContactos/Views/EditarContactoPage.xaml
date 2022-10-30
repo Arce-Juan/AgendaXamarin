@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgendaContactos.Views.EditarContactoPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Modificar Contacto"
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="IdContacto" IsVisible="false" />
+            <Entry x:Name="IdContacto" Text="{Binding Id}" IsVisible="false" />
+
+            <Label Text="Apellido" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" />
+            <Entry x:Name="Apellido" Placeholder="Apellido" Text="{Binding Apellido}" />
+
+            <Label Text="Nombre" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"  />
+            <Entry x:Name="Nombre" Placeholder="Nombre" Text="{Binding Nombre}" />
+
+            <Label Text="Numero" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" />
+            <Entry x:Name="Numero" Placeholder="Numero" Text="{Binding Numero}" />
+
+            <Label Text="Direccion" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"  />
+            <Entry x:Name="Direccion" Placeholder="Direccion" Text="{Binding Direccion}" />
+
+            <Label Text="Email" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" />
+            <Entry x:Name="Email" Placeholder="Email" Text="{Binding Email}" />
+
+            <Label Text="Categoria" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" />
+            <Picker x:Name="picker"
+                    Title="Seleccione" SelectedItem="{Binding Categoria}" >
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Movil</x:String>
+                        <x:String>Casa</x:String>
+                        <x:String>Trabajo</x:String>
+                        <x:String>Empresa</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Modificar" Clicked="EditarContactoAction"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

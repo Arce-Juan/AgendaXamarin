@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgendaContactos.Views.VerContactoPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Datos de Conacto"
+                HorizontalOptions="CenterAndExpand" />
+            
+            <Label Text="Apellido" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" />
+            <Entry x:Name="Apellido" Placeholder="" Text="{Binding Apellido}" IsEnabled="false" />
+
+            <Label Text="Nombre" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"  />
+            <Entry x:Name="Nombre" Placeholder="" Text="{Binding Nombre}" IsEnabled="false" />
+
+            <Label Text="Numero" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" />
+            <Entry x:Name="Numero" Placeholder="" Text="{Binding Numero}" IsEnabled="false" />
+
+            <Label Text="Direccion" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"  />
+            <Entry x:Name="Direccion" Placeholder="" Text="{Binding Direccion}" IsEnabled="false" />
+
+            <Label Text="Email" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" />
+            <Entry x:Name="Email" Placeholder="" Text="{Binding Email}" IsEnabled="false" />
+
+            <Label Text="Categoria" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" />
+            <Entry x:Name="Categoria" Placeholder="" Text="{Binding Categoria}" IsEnabled="false" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

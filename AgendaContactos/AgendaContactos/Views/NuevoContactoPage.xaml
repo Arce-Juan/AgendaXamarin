@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgendaContactos.Views.NuevoContactoPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Nuevo Contacto"
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Apellido" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" />
+            <Entry x:Name="Apellido" Placeholder="Apellido" />
+
+            <Label Text="Nombre" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"  />
+            <Entry x:Name="Nombre" Placeholder="Nombre" />
+
+            <Label Text="Numero" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" />
+            <Entry x:Name="Numero" Placeholder="Numero" />
+
+            <Label Text="Direccion" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"  />
+            <Entry x:Name="Direccion" Placeholder="Direccion" />
+
+            <Label Text="Email" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" />
+            <Entry x:Name="Email" Placeholder="Email" />
+
+            <Label Text="Categoria" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" />
+
+            <Picker x:Name="picker"
+                    Title="Seleccione" >   
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Movil</x:String>
+                        <x:String>Casa</x:String>
+                        <x:String>Trabajo</x:String>
+                        <x:String>Empresa</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Guardar" Clicked="GuardarContactoAction"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
